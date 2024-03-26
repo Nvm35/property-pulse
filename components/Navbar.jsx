@@ -25,7 +25,7 @@ const Navbar = () => {
               id="mobile-dropdown-button"
               className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
               <span className="absolute -inset-0.5"></span>
@@ -63,7 +63,7 @@ const Navbar = () => {
                   href="/"
                   className={`${
                     pathname === "/" ? "bg-black" : ""
-                  }text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
                   Home
                 </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
                   href="/properties"
                   className={`${
                     pathname === "/properties" ? "bg-black" : ""
-                  }text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
                   Properties
                 </Link>
@@ -198,7 +198,7 @@ const Navbar = () => {
 
       {/* <!-- Mobile menu, show/hide based on menu state. --> */}
       {isMobileMenuOpen && (
-        <div className="hidden" id="mobile-menu">
+        <div id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
             <Link
               href="/"
