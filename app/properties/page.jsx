@@ -6,8 +6,8 @@ async function fetchPeroperties() {
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
-
-    return res.json();
+    const data = await res.json();
+    return data.properties;
   } catch (error) {
     console.log(error);
   }
@@ -15,6 +15,8 @@ async function fetchPeroperties() {
 
 const PropertiesPage = async () => {
   const properties = await fetchPeroperties();
+
+  properties.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   return (
     <section className="px-4 py-6">
