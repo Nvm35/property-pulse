@@ -1,5 +1,5 @@
 "use client";
-import CircleLoader from "react-spinners/CircleLoader";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const LoadingPage = ({ loading }) => {
   const override = {
@@ -7,7 +7,7 @@ const LoadingPage = ({ loading }) => {
     margin: "100px auto",
   };
   return (
-    <CircleLoader
+    <PacmanLoader
       color="#36d7b7"
       loading={loading}
       cssOverride={override}
