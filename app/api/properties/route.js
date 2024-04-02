@@ -1,6 +1,5 @@
 import connectDB from '@/config/database';
 import Property from '@/models/Property';
-import { properties } from '@/properties.json';
 
 export const GET = async (request) => {
   try {

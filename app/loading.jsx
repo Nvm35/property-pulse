@@ -1,5 +1,5 @@
-import React from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+"use client";
+import CircleLoader from "react-spinners/CircleLoader";
 
 const LoadingPage = ({ loading }) => {
   const override = {
@@ -7,12 +7,13 @@ const LoadingPage = ({ loading }) => {
     margin: "100px auto",
   };
   return (
-    <ClipLoader
-      color="#3b82f6"
+    <CircleLoader
+      color="#36d7b7"
       loading={loading}
       cssOverride={override}
       size={150}
       aria-label="Loading Spinner"
+      speedMultiplier={1}
     />
   );
 };
