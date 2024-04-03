@@ -29,10 +29,10 @@ async function fetchPeroperty(id) {
       throw new Error("Failed to fetch data");
     }
     const data = await res.json();
-    return data.properties;
+    return data.property;
   } catch (error) {
     console.log(error);
-    return [];
+    return null;
   }
 }
 export { fetchPeroperties, fetchPeroperty }
