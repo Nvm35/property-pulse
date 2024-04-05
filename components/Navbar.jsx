@@ -10,6 +10,8 @@ import { getProviders, signIn, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const { data: session } = useSession();
+  const profileImage = session?.user.image;
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [providers, setProfiders] = useState(false);
@@ -111,7 +113,7 @@ const Navbar = () => {
                       key={index}
                       className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                     >
-                      <FaGoogle className=" text-white mr-2" />
+                      <FaGoogle className="text-white mr-2" />
                       <span>Login or Register</span>
                     </button>
                   ))}
@@ -164,8 +166,10 @@ const Navbar = () => {
                     <span className="sr-only">Open user menu</span>
                     <Image
                       className="h-8 w-8 rounded-full"
-                      src={profileDefault}
+                      src={profileImage || profileDefault}
                       alt=""
+                      width={40}
+                      height={40}
                     />
                   </button>
                 </div>
