@@ -1,7 +1,7 @@
 import "@/assets/styles/global.css";
 import AuthProvider from "@/components/AuthProvider";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
   title: "PropertyPulse | Find where to sleep",

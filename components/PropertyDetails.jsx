@@ -3,7 +3,6 @@ import {
   FaBed,
   FaCheck,
   FaMapMarker,
-  FaMarker,
   FaRulerCombined,
   FaTimes,
 } from "react-icons/fa";

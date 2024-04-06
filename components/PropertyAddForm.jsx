@@ -30,10 +30,62 @@ const PropertyAddForm = () => {
     images: [],
   });
 
-  const handleChange = () => {};
-  const handleAmenitiesChange = () => {};
-  const handleImageChange = () => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
+    if (name.includes(".")) {
+      const [outerKey, innerKey] = name.split(".");
+      setFields((prevFiels) => ({
+        ...prevFiels,
+        [outerKey]: {
+          ...prevFiels[outerKey],
+          [innerKey]: value,
+        },
+      }));
+    } else {
+      setFields((prevFiels) => ({
+        ...prevFiels,
+        [name]: value,
+      }));
+    }
+  };
+  const handleAmenitiesChange = (e) => {
+    const { value, checked } = e.target;
+
+    const updatedAmenities = [...fields.amenities];
+
+    if (checked) {
+      updatedAmenities.push(value);
+    } else {
+      const index = updatedAmenities.indexOf(value);
+      if (index !== -1) {
+        updatedAmenities.splice(index, 1);
+      }
+    }
+
+    setFields((prevFields) => ({
+      ...prevFields,
+      amenities: updatedAmenities,
+    }));
+  };
+
+  const handleImageChange = (e) => {
+    const { files } = e.target;
+
+    // Clone images array
+    const updatedImages = [...fields.images];
+
+    // Add new files to the array
+    for (const file of files) {
+      updatedImages.push(file);
+    }
+
+    // Update state with array of images
+    setFields((prevFields) => ({
+      ...prevFields,
+      images: updatedImages,
+    }));
+  };
   return (
     <form>
       <h2 className="text-3xl text-center font-semibold mb-6">Add Property</h2>
