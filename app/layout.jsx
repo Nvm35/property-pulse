@@ -1,6 +1,6 @@
-import "@/assets/styles/global.css";
-import AuthProvider from "@/components/AuthProvider";
-import Footer from "@/components/Footer";
+import "../assets/styles/global.css";
+import AuthProvider from "../components/AuthProvider";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 export const metadata = {

@@ -1,5 +1,5 @@
-import PropertyCard from "@/components/PropertyCard";
-import { fetchPeroperties } from "@/utils/request";
+import PropertyCard from "../../components/PropertyCard";
+import { fetchPeroperties } from "../../utils/request";
 
 const PropertiesPage = async () => {
   const properties = await fetchPeroperties();

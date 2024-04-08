@@ -1,5 +1,5 @@
 
-import { connectDB } from '../../../config/database';
+import connectDB from '../../../config/database';
 import Property from '../../../models/Property';
 import { getSessionUser } from '../../../utils/getSessionUser';
 import cloudinary from '../../../config/cloudinary';
@@ -21,7 +21,7 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
   try {
-    await connectDB
+    await connectDB();
 
     const sessionUser = await getSessionUser()
 
