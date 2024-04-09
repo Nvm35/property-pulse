@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import Spinner from "../../components/Spinner";
+import Image from "next/image";
 import Link from "next/link";
+import { toast } from "react-toastify";
+import Spinner from "../../components/Spinner";
 
 const ProfilePage = () => {
   const { data: session } = useSession();
@@ -55,13 +56,13 @@ const ProfilePage = () => {
         );
 
         setProperties(updatedProperties);
-        console.log(updatedProperties);
+        toast.success("Property unistalled");
       } else {
-        alert("Failed to delete");
+        toast.error("Failed to delete");
       }
     } catch (error) {
       console.log(error);
-      alert("Failed to delete");
+      toast.warn("Failed to delete");
     }
   };
 
