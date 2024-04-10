@@ -1,6 +1,6 @@
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
 
-async function fetchPeroperties() {
+async function fetchProperties() {
   try {
     if (!apiDomain) {
       return [];
@@ -18,7 +18,7 @@ async function fetchPeroperties() {
   }
 }
 
-async function fetchPeroperty(id) {
+async function fetchProperty(id) {
   try {
     if (!apiDomain) {
       return null;
@@ -35,4 +35,4 @@ async function fetchPeroperty(id) {
     return null;
   }
 }
-export { fetchPeroperties, fetchPeroperty }
+export { fetchProperties, fetchProperty }

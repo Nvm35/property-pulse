@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import PropertyDetails from "../../../components/PropertyDetails";
 import PropertyHeaderImage from "../../../components/PropertyHeaderImage";
 import Spinner from "../../../components/Spinner";
-import { fetchPeroperty } from "../../../utils/request";
+import { fetchProperty } from "../../../utils/request";
 import PropertyImages from "../../../components/PropertyImages";
 
 const PropertyPage = () => {
@@ -20,7 +20,7 @@ const PropertyPage = () => {
       if (!id) return;
 
       try {
-        const property = await fetchPeroperty(id);
+        const property = await fetchProperty(id);
         setProperty(property);
       } catch (error) {
         console.error("Error fetching data:", error);
